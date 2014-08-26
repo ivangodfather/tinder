@@ -41,6 +41,10 @@
 		42DBCCCC19ACC4F800CE6C93 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCCB19ACC4F800CE6C93 /* SWRevealViewController.m */; };
 		42DBCCCF19ACC55300CE6C93 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCCE19ACC55300CE6C93 /* SidebarTableViewController.m */; };
 		42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */; };
+		42DBCCD619ACD87000CE6C93 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCD519ACD87000CE6C93 /* MessagesViewController.m */; };
+		42DBCCD919ACDCB600CE6C93 /* UserMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCD819ACDCB600CE6C93 /* UserMessagesViewController.m */; };
+		42DBCCDD19ACDD9C00CE6C93 /* MessageParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCDC19ACDD9C00CE6C93 /* MessageParse.m */; };
+		42DBCCE019ACDF7000CE6C93 /* UserParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCDF19ACDF7000CE6C93 /* UserParse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,14 @@
 		42DBCCCE19ACC55300CE6C93 /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarTableViewController.m; sourceTree = "<group>"; };
 		42DBCCD019ACCD9A00CE6C93 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ViewControllers/ProfileViewController.h; sourceTree = "<group>"; };
 		42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ViewControllers/ProfileViewController.m; sourceTree = "<group>"; };
+		42DBCCD419ACD87000CE6C93 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesViewController.h; path = ViewControllers/MessagesViewController.h; sourceTree = "<group>"; };
+		42DBCCD519ACD87000CE6C93 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesViewController.m; path = ViewControllers/MessagesViewController.m; sourceTree = "<group>"; };
+		42DBCCD719ACDCB600CE6C93 /* UserMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserMessagesViewController.h; path = ViewControllers/UserMessagesViewController.h; sourceTree = "<group>"; };
+		42DBCCD819ACDCB600CE6C93 /* UserMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserMessagesViewController.m; path = ViewControllers/UserMessagesViewController.m; sourceTree = "<group>"; };
+		42DBCCDB19ACDD9C00CE6C93 /* MessageParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageParse.h; path = Model/MessageParse.h; sourceTree = "<group>"; };
+		42DBCCDC19ACDD9C00CE6C93 /* MessageParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageParse.m; path = Model/MessageParse.m; sourceTree = "<group>"; };
+		42DBCCDE19ACDF7000CE6C93 /* UserParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserParse.h; path = Model/UserParse.h; sourceTree = "<group>"; };
+		42DBCCDF19ACDF7000CE6C93 /* UserParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserParse.m; path = Model/UserParse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +200,7 @@
 		42DBCC3019AC20BB00CE6C93 /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				42DBCCDA19ACDD7400CE6C93 /* Model */,
 				42DBCC8A19AC3DE700CE6C93 /* Libraries */,
 				42DBCC7E19AC2F8100CE6C93 /* ViewControllers */,
 				42DBCC3C19AC20BB00CE6C93 /* Main.storyboard */,
@@ -231,6 +244,7 @@
 		42DBCC7E19AC2F8100CE6C93 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				42DBCCD319ACD85600CE6C93 /* Messages */,
 				42DBCC8619AC3DA000CE6C93 /* Application */,
 				42DBCC8519AC2FAC00CE6C93 /* Login */,
 			);
@@ -278,6 +292,28 @@
 				42DBCCCB19ACC4F800CE6C93 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		42DBCCD319ACD85600CE6C93 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCCD419ACD87000CE6C93 /* MessagesViewController.h */,
+				42DBCCD519ACD87000CE6C93 /* MessagesViewController.m */,
+				42DBCCD719ACDCB600CE6C93 /* UserMessagesViewController.h */,
+				42DBCCD819ACDCB600CE6C93 /* UserMessagesViewController.m */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		42DBCCDA19ACDD7400CE6C93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCCDB19ACDD9C00CE6C93 /* MessageParse.h */,
+				42DBCCDC19ACDD9C00CE6C93 /* MessageParse.m */,
+				42DBCCDE19ACDF7000CE6C93 /* UserParse.h */,
+				42DBCCDF19ACDF7000CE6C93 /* UserParse.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,11 +414,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				42DBCCCF19ACC55300CE6C93 /* SidebarTableViewController.m in Sources */,
+				42DBCCDD19ACDD9C00CE6C93 /* MessageParse.m in Sources */,
+				42DBCCD919ACDCB600CE6C93 /* UserMessagesViewController.m in Sources */,
 				42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */,
 				42DBCCCC19ACC4F800CE6C93 /* SWRevealViewController.m in Sources */,
 				42DBCC3B19AC20BB00CE6C93 /* AppDelegate.m in Sources */,
+				42DBCCE019ACDF7000CE6C93 /* UserParse.m in Sources */,
 				42DBCCC819AC4E4B00CE6C93 /* MainViewController.m in Sources */,
 				42DBCC3719AC20BB00CE6C93 /* main.m in Sources */,
+				42DBCCD619ACD87000CE6C93 /* MessagesViewController.m in Sources */,
 				42DBCCC419AC4E4200CE6C93 /* SignupViewController.m in Sources */,
 				42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */,
 				42DBCCC319AC4E4200CE6C93 /* LoginViewController.m in Sources */,
