@@ -14,13 +14,33 @@
 		42DBCC3719AC20BB00CE6C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCC3619AC20BB00CE6C93 /* main.m */; };
 		42DBCC3B19AC20BB00CE6C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCC3A19AC20BB00CE6C93 /* AppDelegate.m */; };
 		42DBCC3E19AC20BB00CE6C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42DBCC3C19AC20BB00CE6C93 /* Main.storyboard */; };
-		42DBCC4119AC20BB00CE6C93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCC4019AC20BB00CE6C93 /* ViewController.m */; };
 		42DBCC4319AC20BB00CE6C93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42DBCC4219AC20BB00CE6C93 /* Images.xcassets */; };
 		42DBCC4A19AC20BB00CE6C93 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC4919AC20BB00CE6C93 /* XCTest.framework */; };
 		42DBCC4B19AC20BB00CE6C93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2A19AC20BB00CE6C93 /* Foundation.framework */; };
 		42DBCC4C19AC20BB00CE6C93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2E19AC20BB00CE6C93 /* UIKit.framework */; };
 		42DBCC5419AC20BB00CE6C93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42DBCC5219AC20BB00CE6C93 /* InfoPlist.strings */; };
 		42DBCC5619AC20BB00CE6C93 /* TinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCC5519AC20BB00CE6C93 /* TinderTests.m */; };
+		42DBCC6119AC2B5700CE6C93 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC5F19AC2B5700CE6C93 /* Parse.framework */; };
+		42DBCC6219AC2B5700CE6C93 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6019AC2B5700CE6C93 /* ParseFacebookUtils.framework */; };
+		42DBCC6419AC2B7A00CE6C93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6319AC2B7A00CE6C93 /* AdSupport.framework */; };
+		42DBCC6819AC2B8B00CE6C93 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6719AC2B8B00CE6C93 /* Accounts.framework */; };
+		42DBCC6A19AC2B9500CE6C93 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6919AC2B9500CE6C93 /* AudioToolbox.framework */; };
+		42DBCC6C19AC2BA200CE6C93 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6B19AC2BA200CE6C93 /* CFNetwork.framework */; };
+		42DBCC6E19AC2BB000CE6C93 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6D19AC2BB000CE6C93 /* CoreLocation.framework */; };
+		42DBCC7219AC2BEF00CE6C93 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC7119AC2BEF00CE6C93 /* MobileCoreServices.framework */; };
+		42DBCC7419AC2BFA00CE6C93 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC7319AC2BFA00CE6C93 /* Security.framework */; };
+		42DBCC7619AC2C0200CE6C93 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC7519AC2C0200CE6C93 /* StoreKit.framework */; };
+		42DBCC7819AC2C0E00CE6C93 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC7719AC2C0E00CE6C93 /* SystemConfiguration.framework */; };
+		42DBCC7A19AC2CCC00CE6C93 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC7919AC2CCC00CE6C93 /* libz.dylib */; };
+		42DBCC7B19AC2DE200CE6C93 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6519AC2B8000CE6C93 /* Social.framework */; };
+		42DBCC7D19AC2EC500CE6C93 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC7C19AC2EC500CE6C93 /* Bolts.framework */; };
+		42DBCCC319AC4E4200CE6C93 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCBE19AC4E4200CE6C93 /* LoginViewController.m */; };
+		42DBCCC419AC4E4200CE6C93 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCC019AC4E4200CE6C93 /* SignupViewController.m */; };
+		42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCC219AC4E4200CE6C93 /* StarterViewController.m */; };
+		42DBCCC819AC4E4B00CE6C93 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */; };
+		42DBCCCC19ACC4F800CE6C93 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCCB19ACC4F800CE6C93 /* SWRevealViewController.m */; };
+		42DBCCCF19ACC55300CE6C93 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCCE19ACC55300CE6C93 /* SidebarTableViewController.m */; };
+		42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +65,41 @@
 		42DBCC3919AC20BB00CE6C93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42DBCC3A19AC20BB00CE6C93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		42DBCC3D19AC20BB00CE6C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42DBCC3F19AC20BB00CE6C93 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42DBCC4019AC20BB00CE6C93 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		42DBCC4219AC20BB00CE6C93 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42DBCC4819AC20BB00CE6C93 /* TinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DBCC4919AC20BB00CE6C93 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		42DBCC5119AC20BB00CE6C93 /* TinderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinderTests-Info.plist"; sourceTree = "<group>"; };
 		42DBCC5319AC20BB00CE6C93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42DBCC5519AC20BB00CE6C93 /* TinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinderTests.m; sourceTree = "<group>"; };
+		42DBCC5F19AC2B5700CE6C93 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		42DBCC6019AC2B5700CE6C93 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		42DBCC6319AC2B7A00CE6C93 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		42DBCC6519AC2B8000CE6C93 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		42DBCC6719AC2B8B00CE6C93 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		42DBCC6919AC2B9500CE6C93 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		42DBCC6B19AC2BA200CE6C93 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		42DBCC6D19AC2BB000CE6C93 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		42DBCC6F19AC2BC100CE6C93 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		42DBCC7119AC2BEF00CE6C93 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		42DBCC7319AC2BFA00CE6C93 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		42DBCC7519AC2C0200CE6C93 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		42DBCC7719AC2C0E00CE6C93 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		42DBCC7919AC2CCC00CE6C93 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		42DBCC7C19AC2EC500CE6C93 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		42DBCCBD19AC4E4200CE6C93 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
+		42DBCCBE19AC4E4200CE6C93 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
+		42DBCCBF19AC4E4200CE6C93 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignupViewController.h; path = ViewControllers/SignupViewController.h; sourceTree = "<group>"; };
+		42DBCCC019AC4E4200CE6C93 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = ViewControllers/SignupViewController.m; sourceTree = "<group>"; };
+		42DBCCC119AC4E4200CE6C93 /* StarterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarterViewController.h; path = ViewControllers/StarterViewController.h; sourceTree = "<group>"; };
+		42DBCCC219AC4E4200CE6C93 /* StarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarterViewController.m; path = ViewControllers/StarterViewController.m; sourceTree = "<group>"; };
+		42DBCCC619AC4E4B00CE6C93 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
+		42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
+		42DBCCCA19ACC4F800CE6C93 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		42DBCCCB19ACC4F800CE6C93 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		42DBCCCD19ACC55300CE6C93 /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarTableViewController.h; sourceTree = "<group>"; };
+		42DBCCCE19ACC55300CE6C93 /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarTableViewController.m; sourceTree = "<group>"; };
+		42DBCCD019ACCD9A00CE6C93 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ViewControllers/ProfileViewController.h; sourceTree = "<group>"; };
+		42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ViewControllers/ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +107,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DBCC7B19AC2DE200CE6C93 /* Social.framework in Frameworks */,
+				42DBCC7A19AC2CCC00CE6C93 /* libz.dylib in Frameworks */,
+				42DBCC7819AC2C0E00CE6C93 /* SystemConfiguration.framework in Frameworks */,
+				42DBCC7619AC2C0200CE6C93 /* StoreKit.framework in Frameworks */,
+				42DBCC7419AC2BFA00CE6C93 /* Security.framework in Frameworks */,
+				42DBCC7219AC2BEF00CE6C93 /* MobileCoreServices.framework in Frameworks */,
+				42DBCC6E19AC2BB000CE6C93 /* CoreLocation.framework in Frameworks */,
 				42DBCC2D19AC20BB00CE6C93 /* CoreGraphics.framework in Frameworks */,
+				42DBCC6C19AC2BA200CE6C93 /* CFNetwork.framework in Frameworks */,
+				42DBCC6A19AC2B9500CE6C93 /* AudioToolbox.framework in Frameworks */,
+				42DBCC6819AC2B8B00CE6C93 /* Accounts.framework in Frameworks */,
+				42DBCC6419AC2B7A00CE6C93 /* AdSupport.framework in Frameworks */,
+				42DBCC7D19AC2EC500CE6C93 /* Bolts.framework in Frameworks */,
 				42DBCC2F19AC20BB00CE6C93 /* UIKit.framework in Frameworks */,
+				42DBCC6119AC2B5700CE6C93 /* Parse.framework in Frameworks */,
+				42DBCC6219AC2B5700CE6C93 /* ParseFacebookUtils.framework in Frameworks */,
 				42DBCC2B19AC20BB00CE6C93 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +162,21 @@
 		42DBCC2919AC20BB00CE6C93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42DBCC7C19AC2EC500CE6C93 /* Bolts.framework */,
+				42DBCC7919AC2CCC00CE6C93 /* libz.dylib */,
+				42DBCC7719AC2C0E00CE6C93 /* SystemConfiguration.framework */,
+				42DBCC7519AC2C0200CE6C93 /* StoreKit.framework */,
+				42DBCC7319AC2BFA00CE6C93 /* Security.framework */,
+				42DBCC7119AC2BEF00CE6C93 /* MobileCoreServices.framework */,
+				42DBCC6F19AC2BC100CE6C93 /* libsqlite3.dylib */,
+				42DBCC6D19AC2BB000CE6C93 /* CoreLocation.framework */,
+				42DBCC6B19AC2BA200CE6C93 /* CFNetwork.framework */,
+				42DBCC6919AC2B9500CE6C93 /* AudioToolbox.framework */,
+				42DBCC6719AC2B8B00CE6C93 /* Accounts.framework */,
+				42DBCC6519AC2B8000CE6C93 /* Social.framework */,
+				42DBCC6319AC2B7A00CE6C93 /* AdSupport.framework */,
+				42DBCC5F19AC2B5700CE6C93 /* Parse.framework */,
+				42DBCC6019AC2B5700CE6C93 /* ParseFacebookUtils.framework */,
 				42DBCC2A19AC20BB00CE6C93 /* Foundation.framework */,
 				42DBCC2C19AC20BB00CE6C93 /* CoreGraphics.framework */,
 				42DBCC2E19AC20BB00CE6C93 /* UIKit.framework */,
@@ -112,11 +188,9 @@
 		42DBCC3019AC20BB00CE6C93 /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
-				42DBCC3919AC20BB00CE6C93 /* AppDelegate.h */,
-				42DBCC3A19AC20BB00CE6C93 /* AppDelegate.m */,
+				42DBCC8A19AC3DE700CE6C93 /* Libraries */,
+				42DBCC7E19AC2F8100CE6C93 /* ViewControllers */,
 				42DBCC3C19AC20BB00CE6C93 /* Main.storyboard */,
-				42DBCC3F19AC20BB00CE6C93 /* ViewController.h */,
-				42DBCC4019AC20BB00CE6C93 /* ViewController.m */,
 				42DBCC4219AC20BB00CE6C93 /* Images.xcassets */,
 				42DBCC3119AC20BB00CE6C93 /* Supporting Files */,
 			);
@@ -126,6 +200,8 @@
 		42DBCC3119AC20BB00CE6C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				42DBCC3919AC20BB00CE6C93 /* AppDelegate.h */,
+				42DBCC3A19AC20BB00CE6C93 /* AppDelegate.m */,
 				42DBCC3219AC20BB00CE6C93 /* Tinder-Info.plist */,
 				42DBCC3319AC20BB00CE6C93 /* InfoPlist.strings */,
 				42DBCC3619AC20BB00CE6C93 /* main.m */,
@@ -150,6 +226,58 @@
 				42DBCC5219AC20BB00CE6C93 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42DBCC7E19AC2F8100CE6C93 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCC8619AC3DA000CE6C93 /* Application */,
+				42DBCC8519AC2FAC00CE6C93 /* Login */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		42DBCC8519AC2FAC00CE6C93 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCCBD19AC4E4200CE6C93 /* LoginViewController.h */,
+				42DBCCBE19AC4E4200CE6C93 /* LoginViewController.m */,
+				42DBCCBF19AC4E4200CE6C93 /* SignupViewController.h */,
+				42DBCCC019AC4E4200CE6C93 /* SignupViewController.m */,
+				42DBCCC119AC4E4200CE6C93 /* StarterViewController.h */,
+				42DBCCC219AC4E4200CE6C93 /* StarterViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		42DBCC8619AC3DA000CE6C93 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCCCD19ACC55300CE6C93 /* SidebarTableViewController.h */,
+				42DBCCCE19ACC55300CE6C93 /* SidebarTableViewController.m */,
+				42DBCCC619AC4E4B00CE6C93 /* MainViewController.h */,
+				42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */,
+				42DBCCD019ACCD9A00CE6C93 /* ProfileViewController.h */,
+				42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		42DBCC8A19AC3DE700CE6C93 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCCC919ACC4D600CE6C93 /* SWRevealViewController */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		42DBCCC919ACC4D600CE6C93 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCCCA19ACC4F800CE6C93 /* SWRevealViewController.h */,
+				42DBCCCB19ACC4F800CE6C93 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +377,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42DBCC4119AC20BB00CE6C93 /* ViewController.m in Sources */,
+				42DBCCCF19ACC55300CE6C93 /* SidebarTableViewController.m in Sources */,
+				42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */,
+				42DBCCCC19ACC4F800CE6C93 /* SWRevealViewController.m in Sources */,
 				42DBCC3B19AC20BB00CE6C93 /* AppDelegate.m in Sources */,
+				42DBCCC819AC4E4B00CE6C93 /* MainViewController.m in Sources */,
 				42DBCC3719AC20BB00CE6C93 /* main.m in Sources */,
+				42DBCCC419AC4E4200CE6C93 /* SignupViewController.m in Sources */,
+				42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */,
+				42DBCCC319AC4E4200CE6C93 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +510,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tinder/Tinder-Prefix.pch";
 				INFOPLIST_FILE = "Tinder/Tinder-Info.plist";
@@ -389,6 +527,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tinder/Tinder-Prefix.pch";
 				INFOPLIST_FILE = "Tinder/Tinder-Info.plist";
@@ -456,6 +598,7 @@
 				42DBCC5B19AC20BB00CE6C93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42DBCC5C19AC20BB00CE6C93 /* Build configuration list for PBXNativeTarget "TinderTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +607,7 @@
 				42DBCC5E19AC20BB00CE6C93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
