@@ -45,6 +45,7 @@
 		42DBCCD919ACDCB600CE6C93 /* UserMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCD819ACDCB600CE6C93 /* UserMessagesViewController.m */; };
 		42DBCCDD19ACDD9C00CE6C93 /* MessageParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCDC19ACDD9C00CE6C93 /* MessageParse.m */; };
 		42DBCCE019ACDF7000CE6C93 /* UserParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCDF19ACDF7000CE6C93 /* UserParse.m */; };
+		42DBCCE419AD01F100CE6C93 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCE319AD01F100CE6C93 /* MessageTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		42DBCCDC19ACDD9C00CE6C93 /* MessageParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageParse.m; path = Model/MessageParse.m; sourceTree = "<group>"; };
 		42DBCCDE19ACDF7000CE6C93 /* UserParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserParse.h; path = Model/UserParse.h; sourceTree = "<group>"; };
 		42DBCCDF19ACDF7000CE6C93 /* UserParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserParse.m; path = Model/UserParse.m; sourceTree = "<group>"; };
+		42DBCCE219AD01F100CE6C93 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageTableViewCell.h; path = View/MessageTableViewCell.h; sourceTree = "<group>"; };
+		42DBCCE319AD01F100CE6C93 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageTableViewCell.m; path = View/MessageTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,7 @@
 		42DBCC3019AC20BB00CE6C93 /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				42DBCCE119AD01CB00CE6C93 /* View */,
 				42DBCCDA19ACDD7400CE6C93 /* Model */,
 				42DBCC8A19AC3DE700CE6C93 /* Libraries */,
 				42DBCC7E19AC2F8100CE6C93 /* ViewControllers */,
@@ -316,6 +320,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		42DBCCE119AD01CB00CE6C93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42DBCCE219AD01F100CE6C93 /* MessageTableViewCell.h */,
+				42DBCCE319AD01F100CE6C93 /* MessageTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +435,7 @@
 				42DBCCE019ACDF7000CE6C93 /* UserParse.m in Sources */,
 				42DBCCC819AC4E4B00CE6C93 /* MainViewController.m in Sources */,
 				42DBCC3719AC20BB00CE6C93 /* main.m in Sources */,
+				42DBCCE419AD01F100CE6C93 /* MessageTableViewCell.m in Sources */,
 				42DBCCD619ACD87000CE6C93 /* MessagesViewController.m in Sources */,
 				42DBCCC419AC4E4200CE6C93 /* SignupViewController.m in Sources */,
 				42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */,

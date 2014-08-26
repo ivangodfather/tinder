@@ -4,6 +4,7 @@
 
 @dynamic fromUserParse;
 @dynamic toUserParse;
+@dynamic text;
 
 + (void)load {
     [self registerSubclass];
