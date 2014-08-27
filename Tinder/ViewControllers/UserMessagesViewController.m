@@ -83,7 +83,6 @@
     [fromUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         cell.textMessageLabel.text = [[message.fromUserParse.username stringByAppendingString:@": "] stringByAppendingString:message.text];
     }];
-  
     return cell;
 }
 
