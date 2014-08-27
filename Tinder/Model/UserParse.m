@@ -13,6 +13,7 @@
 @dynamic age;
 @dynamic photo;
 @dynamic isMale;
+@dynamic sexuality;
 
 + (void)load {
     [self registerSubclass];

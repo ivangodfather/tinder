@@ -10,6 +10,8 @@
 		0BA4ECAD19ACEBED00302E92 /* CustomSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECAC19ACEBED00302E92 /* CustomSignUpViewController.m */; };
 		0BA4ECB219AE1EE200302E92 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECB119AE1EE200302E92 /* SidebarTableViewController.m */; };
 		0BA4ECB519AE1F0A00302E92 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECB419AE1F0A00302E92 /* SWRevealViewController.m */; };
+		0BA4ECB819AE203F00302E92 /* URBSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECB719AE203F00302E92 /* URBSegmentedControl.m */; };
+		0BA4ECBB19AE232600302E92 /* CustomSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECBA19AE232600302E92 /* CustomSignInViewController.m */; };
 		42DBCC2B19AC20BB00CE6C93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2A19AC20BB00CE6C93 /* Foundation.framework */; };
 		42DBCC2D19AC20BB00CE6C93 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2C19AC20BB00CE6C93 /* CoreGraphics.framework */; };
 		42DBCC2F19AC20BB00CE6C93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2E19AC20BB00CE6C93 /* UIKit.framework */; };
@@ -66,6 +68,10 @@
 		0BA4ECB119AE1EE200302E92 /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarTableViewController.m; path = ViewControllers/SidebarTableViewController.m; sourceTree = "<group>"; };
 		0BA4ECB319AE1F0A00302E92 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = Libraries/SWRevealViewController.h; sourceTree = "<group>"; };
 		0BA4ECB419AE1F0A00302E92 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Libraries/SWRevealViewController.m; sourceTree = "<group>"; };
+		0BA4ECB619AE203F00302E92 /* URBSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URBSegmentedControl.h; sourceTree = "<group>"; };
+		0BA4ECB719AE203F00302E92 /* URBSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URBSegmentedControl.m; sourceTree = "<group>"; };
+		0BA4ECB919AE232600302E92 /* CustomSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSignInViewController.h; path = ViewControllers/CustomSignInViewController.h; sourceTree = "<group>"; };
+		0BA4ECBA19AE232600302E92 /* CustomSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSignInViewController.m; path = ViewControllers/CustomSignInViewController.m; sourceTree = "<group>"; };
 		42DBCC2719AC20BB00CE6C93 /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DBCC2A19AC20BB00CE6C93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42DBCC2C19AC20BB00CE6C93 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +167,8 @@
 		0BA4ECAF19AE1DDD00302E92 /* CustomSegementedControl */ = {
 			isa = PBXGroup;
 			children = (
+				0BA4ECB619AE203F00302E92 /* URBSegmentedControl.h */,
+				0BA4ECB719AE203F00302E92 /* URBSegmentedControl.m */,
 			);
 			name = CustomSegementedControl;
 			sourceTree = "<group>";
@@ -276,6 +284,8 @@
 				42DBCCC219AC4E4200CE6C93 /* StarterViewController.m */,
 				0BA4ECAB19ACEBED00302E92 /* CustomSignUpViewController.h */,
 				0BA4ECAC19ACEBED00302E92 /* CustomSignUpViewController.m */,
+				0BA4ECB919AE232600302E92 /* CustomSignInViewController.h */,
+				0BA4ECBA19AE232600302E92 /* CustomSignInViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -445,12 +455,14 @@
 				42DBCCD919ACDCB600CE6C93 /* UserMessagesViewController.m in Sources */,
 				42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */,
 				42DBCC3B19AC20BB00CE6C93 /* AppDelegate.m in Sources */,
+				0BA4ECB819AE203F00302E92 /* URBSegmentedControl.m in Sources */,
 				42DBCCE019ACDF7000CE6C93 /* UserParse.m in Sources */,
 				42DBCCC819AC4E4B00CE6C93 /* MainViewController.m in Sources */,
 				42DBCC3719AC20BB00CE6C93 /* main.m in Sources */,
 				42DBCCE419AD01F100CE6C93 /* MessageTableViewCell.m in Sources */,
 				0BA4ECB219AE1EE200302E92 /* SidebarTableViewController.m in Sources */,
 				42DBCCD619ACD87000CE6C93 /* MessagesViewController.m in Sources */,
+				0BA4ECBB19AE232600302E92 /* CustomSignInViewController.m in Sources */,
 				42DBCCC419AC4E4200CE6C93 /* SignupViewController.m in Sources */,
 				42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */,
 				42DBCCC319AC4E4200CE6C93 /* LoginViewController.m in Sources */,

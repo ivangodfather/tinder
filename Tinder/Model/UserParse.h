@@ -12,4 +12,5 @@
 @property NSNumber* age;
 @property BOOL isMale;
 @property PFFile* photo;
+@property NSNumber* sexuality;
 @end

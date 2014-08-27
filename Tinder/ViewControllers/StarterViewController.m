@@ -12,7 +12,7 @@
     [super viewDidAppear:animated];
     
     if (![PFUser currentUser]) {
-        [self showLogin];
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
     } else {
         [self performSegueWithIdentifier:@"mainVC" sender:nil];
     }

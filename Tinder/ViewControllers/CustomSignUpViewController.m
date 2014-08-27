@@ -8,6 +8,8 @@
 
 #import "CustomSignUpViewController.h"
 #import "UserParse.h"
+#import "URBSegmentedControl.h"
+
  
 #define MAX_AGE 99+1
 #define MIN_AGE 18
@@ -18,12 +20,13 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *picker;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property NSMutableArray* ageArray;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *genderSegmentedControl;
+@property URBSegmentedControl* genderSegmentedControl;
 @property (weak, nonatomic) IBOutlet UIButton* ageButton;
 @property UIImage* photo;
 @property PFFile* file;
 @property UIActionSheet *actionSheet;
 @property NSString* errorMessage;
+@property URBSegmentedControl *sexualityControl;
 @end
 
 @implementation CustomSignUpViewController
@@ -31,8 +34,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setUpSegmentedControl];
     [self setTextDelegates];
     [self populateArray];
+}
+
+-(void) setUpSegmentedControl
+{
+    [[URBSegmentedControl appearance] setSegmentBackgroundColor:[UIColor greenColor]];
+    NSArray *genders = [NSArray arrayWithObjects:[@"MALE" uppercaseString], [@"FEMALE" uppercaseString],nil];
+    NSArray *titles = [NSArray arrayWithObjects:[@"MALES" uppercaseString], [@"FEMALES" uppercaseString], [@"BISEXUAL" uppercaseString], nil];
+
+    //	NSArray *icons = [NSArray arrayWithObjects:[UIImage imageNamed:@"mountains.png"], [UIImage imageNamed:@"snowboarder.png"], [UIImage imageNamed:@"biker.png"], nil];
+    
+    self.sexualityControl = [[URBSegmentedControl alloc] initWithItems:titles];
+	self.sexualityControl.frame = CGRectMake(10.0, 360.0, 295.0, 40.0);
+	self.sexualityControl.segmentBackgroundColor = [UIColor blueColor];
+    [self.sexualityControl setSegmentBackgroundColor:[UIColor purpleColor] atIndex:1];
+	[self.sexualityControl setSegmentBackgroundColor:[UIColor greenColor] atIndex:2];
+	[self.view addSubview:self.sexualityControl];
+
+    self.genderSegmentedControl = [[URBSegmentedControl alloc] initWithItems:genders];
+	self.genderSegmentedControl.frame = CGRectMake(10.0, 280.0, 295.0, 40.0);
+	self.genderSegmentedControl.segmentBackgroundColor = [UIColor blueColor];
+	[self.genderSegmentedControl setSegmentBackgroundColor:[UIColor purpleColor] atIndex:1];
+	[self.view addSubview:self.genderSegmentedControl];
+
+	[self.sexualityControl addTarget:self action:@selector(handleSelection:) forControlEvents:UIControlEventValueChanged];
+	[self.sexualityControl setControlEventBlock:^(NSInteger index, URBSegmentedControl *segmentedControl) {
+	}];
+
+    [self.genderSegmentedControl addTarget:self action:@selector(handleSelection:) forControlEvents:UIControlEventValueChanged];
+	[self.genderSegmentedControl setControlEventBlock:^(NSInteger index, URBSegmentedControl *segmentedControl) {
+		NSLog(@"URBSegmentedControl: control block - index=%i", index);
+	}];
+}
+
+- (void)handleSelection:(id)sender {
 }
 
 #pragma mark - textField delegates
@@ -183,10 +221,11 @@
     } else {
         aUser.isMale = NO;
     }
+    aUser.sexuality = [NSNumber numberWithInteger:self.sexualityControl.selectedSegmentIndex];
     [aUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"age %@\n name %@\n email %@\n password %@\n photo %@", aUser.age, aUser.username, aUser.email, aUser.password, aUser.photo);
-//            [self performSegueWithIdentifier:@"" sender:self];
+            NSLog(@"age %@\n name %@\n email %@\n password %@\n photo %@\n sexuality %@\n isMale %hhd", aUser.age, aUser.username, aUser.email, aUser.password, aUser.photo, aUser.sexuality, aUser.isMale);
+            [self performSegueWithIdentifier:@"signup" sender:self];
         } else {
             if (error.code == 202) {
                 self.errorMessage = [NSString stringWithFormat:@"username: %@ already taken", self.nameTextField.text];
