@@ -64,6 +64,16 @@
                                     <action selector="pickImage:" destination="6Cj-Sv-ykn" eventType="touchUpInside" id="VUr-hb-N2c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRg-GB-c6Z">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0nu-LK-2zr" kind="modal" id="J9J-1N-Njp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -588,6 +598,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="MHJ-Yn-gep"/>
+        <segue reference="J9J-1N-Njp"/>
         <segue reference="gkA-kl-DA7"/>
     </inferredMetricsTieBreakers>
 </document>
