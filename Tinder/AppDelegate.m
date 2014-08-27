@@ -16,10 +16,32 @@
 
     [Parse setApplicationId:@"QOEDDR90baHtuQNFHxblVbDPY9BRKuNxXLcIegnQ"
                   clientKey:@"QlwXT1FOPfunC0oj1zMRO1oiYZH1DnulG2KmWm0s"];
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeBadge |
+     UIRemoteNotificationTypeAlert |
+     UIRemoteNotificationTypeSound];
 
     return YES;
 }
-							
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    currentInstallation.channels = @[@"global"];
+    if ([PFUser currentUser]) {
+        currentInstallation.channels = @[@"global",[@"user_" stringByAppendingString:[PFUser currentUser].objectId]];
+    }
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:receivedMessage object:userInfo];
+    //[PFPush handlePush:userInfo];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

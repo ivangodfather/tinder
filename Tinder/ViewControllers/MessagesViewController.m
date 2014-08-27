@@ -9,6 +9,7 @@
 #import "MessagesViewController.h"
 #import "UserParse.h"
 #import "MessageParse.h"
+#import "UserMessagesViewController.h"
 
 @interface MessagesViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -25,6 +26,14 @@
     [self loadChatPersons];
     self.usersParseArray = [NSMutableArray new];
     // Do any additional setup after loading the view.
+#warning Move to signin delegate
+    if ([PFUser currentUser]) {
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        [currentInstallation setObject:[PFUser currentUser] forKey:@"user"];
+        [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+        }];
+    }
 }
 
 
@@ -51,6 +60,14 @@
         }
 
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"UserMessages"]) {
+        UserMessagesViewController *vc = segue.destinationViewController;
+        vc.toUserParse = [self.usersParseArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
 }
 
 #pragma mark UItableView Delegate

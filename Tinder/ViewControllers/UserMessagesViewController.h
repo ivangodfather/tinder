@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserParse.h"
 
 @interface UserMessagesViewController : UIViewController
-
+@property UserParse *toUserParse;
 @end
