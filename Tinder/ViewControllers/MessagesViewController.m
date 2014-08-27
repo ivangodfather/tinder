@@ -36,7 +36,6 @@
     }
 }
 
-
 - (void)loadChatPersons
 {
     PFQuery *messageQueryFrom = [MessageParse query];
@@ -44,23 +43,38 @@
     PFQuery *messageQueryTo = [MessageParse query];
     [messageQueryTo whereKey:@"toUserParse" equalTo:[UserParse currentUser]];
     PFQuery *both = [PFQuery orQueryWithSubqueries:@[messageQueryFrom, messageQueryTo]];
+
+    __block int count = 0;
     [both findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         NSMutableSet *usersIDs = [NSMutableSet new];
         for (MessageParse *message in objects) {
-            [usersIDs addObject:message.fromUserParse.objectId];
-            [usersIDs addObject:message.toUserParse.objectId];
-        }
-        [usersIDs removeObject:[UserParse currentUser].objectId];
-        PFQuery *userParse = [UserParse query];
-        for (NSString *userID in usersIDs) {
-            [userParse getObjectInBackgroundWithId:userID block:^(PFObject *object, NSError *error) {
-                [self.usersParseArray addObject:object];
-                [self.tableView reloadData];
+            [message.fromUserParse fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+                [message.toUserParse fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+
+                    [usersIDs addObject:message.fromUserParse.objectId];
+                    [usersIDs addObject:message.toUserParse.objectId];
+                    count++;
+                    if (count == objects.count) {
+                        [usersIDs removeObject:[PFUser currentUser].objectId];
+                        NSLog(@"IDS %d:%@", (int)usersIDs.count, usersIDs);
+                        __block int count2 = 0;
+                        for (NSString *userID in usersIDs) {
+                            PFQuery *userParse = [UserParse query];
+                            [userParse getObjectInBackgroundWithId:userID block:^(PFObject *object, NSError *error) {
+                                count2++;
+                                [self.usersParseArray addObject:object];
+                                if (count2 == usersIDs.count) {
+                                    [self.tableView reloadData];
+                                }
+                            }];
+                        }
+                    }
+                }];
             }];
         }
-
     }];
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

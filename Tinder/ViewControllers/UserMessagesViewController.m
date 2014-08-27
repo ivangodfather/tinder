@@ -31,7 +31,7 @@
     message.toUserParse = self.toUserParse;
     message.text = self.messageTextField.text;
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            [self loadMessages];
+        [self loadMessages];
     }];
 
     PFQuery *query = [PFInstallation query];
@@ -52,9 +52,18 @@
 
 - (void)loadMessages
 {
-    PFQuery *query = [MessageParse query];
-    [query orderByAscending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    PFQuery *query1 = [MessageParse query];
+    [query1 whereKey:@"fromUserParse" equalTo:[PFUser currentUser]];
+    [query1 whereKey:@"toUserParse" equalTo:self.toUserParse];
+
+    PFQuery *query2 = [MessageParse query];
+    [query2 whereKey:@"fromUserParse" equalTo:self.toUserParse];
+    [query2 whereKey:@"toUserParse" equalTo:[PFUser currentUser]];
+
+    PFQuery *orQUery = [PFQuery orQueryWithSubqueries:@[query1, query2]];
+
+    [orQUery orderByAscending:@"createdAt"];
+    [orQUery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.messages = objects;
         [self.tableView reloadData];
         NSIndexPath* ipath = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
@@ -82,6 +91,11 @@
     PFUser *fromUser = message.fromUserParse;
     [fromUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         cell.textMessageLabel.text = [[message.fromUserParse.username stringByAppendingString:@": "] stringByAppendingString:message.text];
+        if ([message.fromUserParse.username isEqual:[PFUser currentUser].username]) {
+            cell.backgroundColor = [UIColor greenColor];
+        } else {
+            cell.backgroundColor = [UIColor redColor];
+        }
     }];
     return cell;
 }
