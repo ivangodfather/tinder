@@ -9,5 +9,7 @@
 #import <Parse/Parse.h>
 
 @interface UserParse : PFUser <PFSubclassing>
-
+@property NSNumber* age;
+@property BOOL isMale;
+@property PFFile* photo;
 @end

@@ -10,6 +10,10 @@
 
 @implementation UserParse
 
+@dynamic age;
+@dynamic photo;
+@dynamic isMale;
+
 + (void)load {
     [self registerSubclass];
 }
