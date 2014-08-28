@@ -1,11 +1,14 @@
 #import "UserMessagesViewController.h"
 #import "MessageParse.h"
 #import "MessageTableViewCell.h"
+#import "DAKeyboardControl.h"
 
 @interface UserMessagesViewController () <UITableViewDataSource, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
 @property NSArray *messages;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property UITextField *messageTextField;
+@property UIToolbar *toolBar;
+@property CGRect keyboardFrameInView;
 @end
 
 @implementation UserMessagesViewController
@@ -17,6 +20,65 @@
     [self.view addGestureRecognizer:tap];
     [self loadMessages];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedMessageAction:) name:receivedMessage object:nil];
+    [self loadKeyboard];
+}
+
+-(void)loadKeyboard
+{
+    self.view.backgroundColor = [UIColor lightGrayColor];
+
+
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
+    self.toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f,
+                                                                     self.view.bounds.size.height - 40.0f,
+                                                                     self.view.bounds.size.width,
+                                                                     40.0f)];
+    self.toolBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+    [self.view addSubview:self.toolBar];
+
+    self.messageTextField = [[UITextField alloc] initWithFrame:CGRectMake(10.0f,
+                                                                           6.0f,
+                                                                           self.toolBar.bounds.size.width - 20.0f - 68.0f,
+                                                                           30.0f)];
+    self.messageTextField.borderStyle = UITextBorderStyleRoundedRect;
+    self.messageTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [self.toolBar addSubview:self.messageTextField];
+
+    UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    sendButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+    [sendButton setTitle:@"Send" forState:UIControlStateNormal];
+    sendButton.frame = CGRectMake(self.toolBar.bounds.size.width - 68.0f,
+                                  6.0f,
+                                  58.0f,
+                                  29.0f);
+    [sendButton addTarget:self action:@selector(sendButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.toolBar addSubview:sendButton];
+
+
+    self.view.keyboardTriggerOffset = self.toolBar.bounds.size.height;
+    __weak typeof(self) weakSelf = self;
+
+    [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView) {
+        /*
+         Try not to call "self" inside this block (retain cycle).
+         But if you do, make sure to remove DAKeyboardControl
+         when you are done with the view controller by calling:
+         [self.view removeKeyboardControl];
+         */
+
+        CGRect toolBarFrame = weakSelf.toolBar.frame;
+        toolBarFrame.origin.y = keyboardFrameInView.origin.y - toolBarFrame.size.height;
+        weakSelf.toolBar.frame = toolBarFrame;
+
+        CGRect tableViewFrame = weakSelf.tableView.frame;
+        tableViewFrame.size.height = toolBarFrame.origin.y;
+        weakSelf.tableView.frame = tableViewFrame;
+        NSIndexPath* ipath = [NSIndexPath indexPathForRow:weakSelf.messages.count-1 inSection:0];
+        [weakSelf.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
+
+    }];
+
 }
 
 - (void)receivedMessageAction:(NSDictionary *)userInfo
@@ -24,7 +86,7 @@
     [self loadMessages];
 }
 
-- (IBAction)sendButtonPressed:(id)sender
+- (void)sendButtonPressed:(UIButton *)button
 {
     MessageParse *message = [MessageParse object];
     message.fromUserParse = [PFUser currentUser];
@@ -41,14 +103,13 @@
     [PFPush sendPushMessageToQueryInBackground:query
                                    withMessage:self.messageTextField.text];
     self.messageTextField.text = @"";
-    [self.tableView reloadData];
 
 }
 
-- (IBAction)reloadButtonPressed:(id)sender
-{
-    [self loadMessages];
-}
+//- (IBAction)reloadButtonPressed:(id)sender
+//{
+//    [self loadMessages];
+//}
 
 - (void)loadMessages
 {
@@ -67,13 +128,13 @@
         self.messages = objects;
         [self.tableView reloadData];
         NSIndexPath* ipath = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
-        [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionBottom animated: YES];
+        [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
     }];
 }
 
 - (void)makeActive:(UITapGestureRecognizer *)tapGestureRecognizer
 {
-    [self.messageTextField resignFirstResponder];
+    //[self.messageTextField resignFirstResponder];
 }
 
 #pragma mark UITableView Delegate
@@ -85,16 +146,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    MessageTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
 
     MessageParse *message = [self.messages objectAtIndex:indexPath.row];
+    NSLog(@"message %@", message.text);
     PFUser *fromUser = message.fromUserParse;
     [fromUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         cell.textMessageLabel.text = [[message.fromUserParse.username stringByAppendingString:@": "] stringByAppendingString:message.text];
         if ([message.fromUserParse.username isEqual:[PFUser currentUser].username]) {
             cell.backgroundColor = [UIColor greenColor];
+            cell.textMessageLabel.textAlignment = NSTextAlignmentRight;
         } else {
             cell.backgroundColor = [UIColor redColor];
+            cell.textMessageLabel.textAlignment = NSTextAlignmentLeft;
+
         }
     }];
     return cell;

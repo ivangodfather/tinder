@@ -12,6 +12,19 @@
 		0BA4ECB519AE1F0A00302E92 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECB419AE1F0A00302E92 /* SWRevealViewController.m */; };
 		0BA4ECB819AE203F00302E92 /* URBSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECB719AE203F00302E92 /* URBSegmentedControl.m */; };
 		0BA4ECBB19AE232600302E92 /* CustomSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECBA19AE232600302E92 /* CustomSignInViewController.m */; };
+		42091FF719AE798F0092775D /* SPH_PARAM_List.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FBD19AE798F0092775D /* SPH_PARAM_List.m */; };
+		42091FF819AE798F0092775D /* CopyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FC019AE798F0092775D /* CopyLabel.m */; };
+		42091FF919AE798F0092775D /* SPHImageBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FC219AE798F0092775D /* SPHImageBubbleView.m */; };
+		42091FFA19AE798F0092775D /* SPHTextBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FC419AE798F0092775D /* SPHTextBubbleView.m */; };
+		42091FFB19AE798F0092775D /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FC619AE798F0092775D /* TLSpringFlowLayout.m */; };
+		42091FFC19AE798F0092775D /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FC819AE798F0092775D /* UIImage+Utils.m */; };
+		42091FFD19AE798F0092775D /* SPHCollectionViewcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FCA19AE798F0092775D /* SPHCollectionViewcell.m */; };
+		42091FFE19AE798F0092775D /* SPHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42091FCC19AE798F0092775D /* SPHViewController.m */; };
+		42091FFF19AE798F0092775D /* SPHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42091FCD19AE798F0092775D /* SPHViewController.xib */; };
+		4209200119AE79F90092775D /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4209200019AE79F90092775D /* View.xib */; };
+		424E0E7D19AE8B580078B343 /* ChatImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424E0E7C19AE8B580078B343 /* ChatImages.xcassets */; };
+		42BD2AFB19AE42DB00FCC817 /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD2AFA19AE42DB00FCC817 /* DAKeyboardControl.m */; };
+		42BD2AFE19AE5A1B00FCC817 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BD2AFD19AE5A1B00FCC817 /* UserTableViewCell.m */; };
 		42DBCC2B19AC20BB00CE6C93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2A19AC20BB00CE6C93 /* Foundation.framework */; };
 		42DBCC2D19AC20BB00CE6C93 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2C19AC20BB00CE6C93 /* CoreGraphics.framework */; };
 		42DBCC2F19AC20BB00CE6C93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC2E19AC20BB00CE6C93 /* UIKit.framework */; };
@@ -72,6 +85,29 @@
 		0BA4ECB719AE203F00302E92 /* URBSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URBSegmentedControl.m; sourceTree = "<group>"; };
 		0BA4ECB919AE232600302E92 /* CustomSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSignInViewController.h; path = ViewControllers/CustomSignInViewController.h; sourceTree = "<group>"; };
 		0BA4ECBA19AE232600302E92 /* CustomSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSignInViewController.m; path = ViewControllers/CustomSignInViewController.m; sourceTree = "<group>"; };
+		42091FBC19AE798F0092775D /* SPH_PARAM_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPH_PARAM_List.h; sourceTree = "<group>"; };
+		42091FBD19AE798F0092775D /* SPH_PARAM_List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPH_PARAM_List.m; sourceTree = "<group>"; };
+		42091FBF19AE798F0092775D /* CopyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyLabel.h; sourceTree = "<group>"; };
+		42091FC019AE798F0092775D /* CopyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyLabel.m; sourceTree = "<group>"; };
+		42091FC119AE798F0092775D /* SPHImageBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHImageBubbleView.h; sourceTree = "<group>"; };
+		42091FC219AE798F0092775D /* SPHImageBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHImageBubbleView.m; sourceTree = "<group>"; };
+		42091FC319AE798F0092775D /* SPHTextBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHTextBubbleView.h; sourceTree = "<group>"; };
+		42091FC419AE798F0092775D /* SPHTextBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHTextBubbleView.m; sourceTree = "<group>"; };
+		42091FC519AE798F0092775D /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSpringFlowLayout.h; sourceTree = "<group>"; };
+		42091FC619AE798F0092775D /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSpringFlowLayout.m; sourceTree = "<group>"; };
+		42091FC719AE798F0092775D /* UIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		42091FC819AE798F0092775D /* UIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
+		42091FC919AE798F0092775D /* SPHCollectionViewcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHCollectionViewcell.h; sourceTree = "<group>"; };
+		42091FCA19AE798F0092775D /* SPHCollectionViewcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHCollectionViewcell.m; sourceTree = "<group>"; };
+		42091FCB19AE798F0092775D /* SPHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHViewController.h; sourceTree = "<group>"; };
+		42091FCC19AE798F0092775D /* SPHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHViewController.m; sourceTree = "<group>"; };
+		42091FCD19AE798F0092775D /* SPHViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHViewController.xib; sourceTree = "<group>"; };
+		4209200019AE79F90092775D /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		424E0E7C19AE8B580078B343 /* ChatImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChatImages.xcassets; sourceTree = "<group>"; };
+		42BD2AF919AE42DB00FCC817 /* DAKeyboardControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAKeyboardControl.h; sourceTree = "<group>"; };
+		42BD2AFA19AE42DB00FCC817 /* DAKeyboardControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAKeyboardControl.m; sourceTree = "<group>"; };
+		42BD2AFC19AE5A1B00FCC817 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTableViewCell.h; path = View/UserTableViewCell.h; sourceTree = "<group>"; };
+		42BD2AFD19AE5A1B00FCC817 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTableViewCell.m; path = View/UserTableViewCell.m; sourceTree = "<group>"; };
 		42DBCC2719AC20BB00CE6C93 /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DBCC2A19AC20BB00CE6C93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42DBCC2C19AC20BB00CE6C93 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +207,48 @@
 				0BA4ECB719AE203F00302E92 /* URBSegmentedControl.m */,
 			);
 			name = CustomSegementedControl;
+			sourceTree = "<group>";
+		};
+		42091F9019AE798F0092775D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4209200019AE79F90092775D /* View.xib */,
+				42091FBC19AE798F0092775D /* SPH_PARAM_List.h */,
+				42091FBD19AE798F0092775D /* SPH_PARAM_List.m */,
+				42091FBE19AE798F0092775D /* SPHcollectionCell */,
+				42091FC919AE798F0092775D /* SPHCollectionViewcell.h */,
+				42091FCA19AE798F0092775D /* SPHCollectionViewcell.m */,
+				42091FCB19AE798F0092775D /* SPHViewController.h */,
+				42091FCC19AE798F0092775D /* SPHViewController.m */,
+				42091FCD19AE798F0092775D /* SPHViewController.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		42091FBE19AE798F0092775D /* SPHcollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				42091FBF19AE798F0092775D /* CopyLabel.h */,
+				42091FC019AE798F0092775D /* CopyLabel.m */,
+				42091FC119AE798F0092775D /* SPHImageBubbleView.h */,
+				42091FC219AE798F0092775D /* SPHImageBubbleView.m */,
+				42091FC319AE798F0092775D /* SPHTextBubbleView.h */,
+				42091FC419AE798F0092775D /* SPHTextBubbleView.m */,
+				42091FC519AE798F0092775D /* TLSpringFlowLayout.h */,
+				42091FC619AE798F0092775D /* TLSpringFlowLayout.m */,
+				42091FC719AE798F0092775D /* UIImage+Utils.h */,
+				42091FC819AE798F0092775D /* UIImage+Utils.m */,
+			);
+			path = SPHcollectionCell;
+			sourceTree = "<group>";
+		};
+		42BD2AF819AE42DB00FCC817 /* DAKeyboardControl */ = {
+			isa = PBXGroup;
+			children = (
+				42BD2AF919AE42DB00FCC817 /* DAKeyboardControl.h */,
+				42BD2AFA19AE42DB00FCC817 /* DAKeyboardControl.m */,
+			);
+			path = DAKeyboardControl;
 			sourceTree = "<group>";
 		};
 		42DBCC1E19AC20BB00CE6C93 = {
@@ -306,8 +384,11 @@
 		42DBCC8A19AC3DE700CE6C93 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				42091F9019AE798F0092775D /* Chat */,
+				42BD2AF819AE42DB00FCC817 /* DAKeyboardControl */,
 				0BA4ECAF19AE1DDD00302E92 /* CustomSegementedControl */,
 				42DBCCC919ACC4D600CE6C93 /* SWRevealViewController */,
+				424E0E7C19AE8B580078B343 /* ChatImages.xcassets */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -348,6 +429,8 @@
 			children = (
 				42DBCCE219AD01F100CE6C93 /* MessageTableViewCell.h */,
 				42DBCCE319AD01F100CE6C93 /* MessageTableViewCell.m */,
+				42BD2AFC19AE5A1B00FCC817 /* UserTableViewCell.h */,
+				42BD2AFD19AE5A1B00FCC817 /* UserTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -428,9 +511,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424E0E7D19AE8B580078B343 /* ChatImages.xcassets in Resources */,
 				42DBCC4319AC20BB00CE6C93 /* Images.xcassets in Resources */,
 				42DBCC3519AC20BB00CE6C93 /* InfoPlist.strings in Resources */,
 				42DBCC3E19AC20BB00CE6C93 /* Main.storyboard in Resources */,
+				4209200119AE79F90092775D /* View.xib in Resources */,
+				42091FFF19AE798F0092775D /* SPHViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,22 +535,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42091FFB19AE798F0092775D /* TLSpringFlowLayout.m in Sources */,
 				42DBCCDD19ACDD9C00CE6C93 /* MessageParse.m in Sources */,
+				42BD2AFB19AE42DB00FCC817 /* DAKeyboardControl.m in Sources */,
 				0BA4ECAD19ACEBED00302E92 /* CustomSignUpViewController.m in Sources */,
 				0BA4ECB519AE1F0A00302E92 /* SWRevealViewController.m in Sources */,
 				42DBCCD919ACDCB600CE6C93 /* UserMessagesViewController.m in Sources */,
 				42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */,
+				42091FF919AE798F0092775D /* SPHImageBubbleView.m in Sources */,
 				42DBCC3B19AC20BB00CE6C93 /* AppDelegate.m in Sources */,
 				0BA4ECB819AE203F00302E92 /* URBSegmentedControl.m in Sources */,
 				42DBCCE019ACDF7000CE6C93 /* UserParse.m in Sources */,
 				42DBCCC819AC4E4B00CE6C93 /* MainViewController.m in Sources */,
 				42DBCC3719AC20BB00CE6C93 /* main.m in Sources */,
 				42DBCCE419AD01F100CE6C93 /* MessageTableViewCell.m in Sources */,
+				42091FFC19AE798F0092775D /* UIImage+Utils.m in Sources */,
 				0BA4ECB219AE1EE200302E92 /* SidebarTableViewController.m in Sources */,
+				42BD2AFE19AE5A1B00FCC817 /* UserTableViewCell.m in Sources */,
 				42DBCCD619ACD87000CE6C93 /* MessagesViewController.m in Sources */,
 				0BA4ECBB19AE232600302E92 /* CustomSignInViewController.m in Sources */,
+				42091FF819AE798F0092775D /* CopyLabel.m in Sources */,
 				42DBCCC419AC4E4200CE6C93 /* SignupViewController.m in Sources */,
+				42091FF719AE798F0092775D /* SPH_PARAM_List.m in Sources */,
 				42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */,
+				42091FFA19AE798F0092775D /* SPHTextBubbleView.m in Sources */,
+				42091FFE19AE798F0092775D /* SPHViewController.m in Sources */,
+				42091FFD19AE798F0092775D /* SPHCollectionViewcell.m in Sources */,
 				42DBCCC319AC4E4200CE6C93 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

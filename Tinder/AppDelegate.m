@@ -37,7 +37,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
 }
 
 - (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo {
+didReceiveRemoteNotification:(NSNotification *)userInfo {
     [[NSNotificationCenter defaultCenter] postNotificationName:receivedMessage object:userInfo];
     //[PFPush handlePush:userInfo];
 }

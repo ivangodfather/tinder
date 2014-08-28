@@ -9,7 +9,9 @@
 #import "MessagesViewController.h"
 #import "UserParse.h"
 #import "MessageParse.h"
+#import "UserTableViewCell.h"
 #import "UserMessagesViewController.h"
+#import "SPHViewController.h"
 
 @interface MessagesViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -39,6 +41,7 @@
 - (void)loadChatPersons
 {
     PFQuery *messageQueryFrom = [MessageParse query];
+    NSLog(@"%@",[PFUser currentUser].objectId);
     [messageQueryFrom whereKey:@"fromUserParse" equalTo:[UserParse currentUser]];
     PFQuery *messageQueryTo = [MessageParse query];
     [messageQueryTo whereKey:@"toUserParse" equalTo:[UserParse currentUser]];
@@ -88,9 +91,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     UserParse *user = [self.usersParseArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = user.username;
+    cell.nameTextLabel.text = user.username;
+    cell.ageTextLabel.text = user.age.description;
+    [user.photo getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        cell.userImageView.image = [UIImage imageWithData:data];
+    }];
     return cell;
 }
 
@@ -99,4 +106,16 @@
     return self.usersParseArray.count;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SPHViewController *vc = [[SPHViewController alloc] initWithNibName:@"SPHViewController" bundle:nil];
+    vc.toUserParse = [self.usersParseArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)startChat:(id)sender {
+
+
+}
 @end
