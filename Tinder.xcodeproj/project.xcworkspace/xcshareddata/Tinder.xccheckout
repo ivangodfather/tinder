@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>680B0320-79BF-4822-AAD2-F648658AFE48</string>
+	<string>EA97574A-A69C-44CC-9BED-57A22F4B7F21</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Tinder</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7E7D8F33-AF06-430C-99AF-846614A6435E</key>
-		<string>https://github.com/ivangodfather/tinder</string>
+		<key>B7A763E6-8BF3-4ADF-8283-6E09C17B5BB9</key>
+		<string>https://github.com/ivangodfather/tinder.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Tinder.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7E7D8F33-AF06-430C-99AF-846614A6435E</key>
+		<key>B7A763E6-8BF3-4ADF-8283-6E09C17B5BB9</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ivangodfather/tinder</string>
+	<string>https://github.com/ivangodfather/tinder.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7E7D8F33-AF06-430C-99AF-846614A6435E</string>
+	<string>B7A763E6-8BF3-4ADF-8283-6E09C17B5BB9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7E7D8F33-AF06-430C-99AF-846614A6435E</string>
+			<string>B7A763E6-8BF3-4ADF-8283-6E09C17B5BB9</string>
 			<key>IDESourceControlWCCName</key>
 			<string>tinder</string>
 		</dict>
