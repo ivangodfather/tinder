@@ -92,7 +92,7 @@ static NSString *CellIdentifier = @"cellIdentifier";
     message.toUserParse = [UserParse currentUser];
     message.text = note.object[@"aps"][@"alert"];
     [self.messages addObject:message];
-    [self adddMediaBubbledata:kSTextByOther mediaPath:note.object[@"aps"][@"alert"] mtime:[formatter stringFromDate:date] thumb:@"" downloadstatus:@"" sendingStatus:kSent msg_ID:[self genRandStringLength:7]];
+    //[self adddMediaBubbledata:kSTextByOther mediaPath:note.object[@"aps"][@"alert"] mtime:[formatter stringFromDate:date] thumb:@"" downloadstatus:@"" sendingStatus:kSent msg_ID:[self genRandStringLength:7]];
     //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sphBubbledata.count-1 inSection:0];
     //[self.sphChatTable reloadItemsAtIndexPaths:@[indexPath]];
     //[self.sphChatTable reloadData];
@@ -140,14 +140,14 @@ static NSString *CellIdentifier = @"cellIdentifier";
 
     [orQUery orderByAscending:@"createdAt"];
     [orQUery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (MessageParse *message in objects) {
-            self.messages = [objects mutableCopy];
-            NSDate *date = [NSDate date];
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"hh:mm a"];
-            NSString *who = ([message.fromUserParse.objectId isEqualToString:[PFUser currentUser].objectId])?kSTextByme:kSTextByOther;
-            [self adddMediaBubbledata:who mediaPath:message.text mtime:[formatter stringFromDate:date] thumb:@"" downloadstatus:@"" sendingStatus:kSent msg_ID:[self genRandStringLength:7]];
-        }
+        self.messages = [objects mutableCopy];
+        //        for (MessageParse *message in objects) {
+        //            NSDate *date = [NSDate date];
+        //            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        //            [formatter setDateFormat:@"hh:mm a"];
+        //            NSString *who = ([message.fromUserParse.objectId isEqualToString:[PFUser currentUser].objectId])?kSTextByme:kSTextByOther;
+        //           // [self adddMediaBubbledata:who mediaPath:message.text mtime:[formatter stringFromDate:date] thumb:@"" downloadstatus:@"" sendingStatus:kSent msg_ID:[self genRandStringLength:7]];
+        //        }
         [self.sphChatTable reloadData];
 
     }];
@@ -237,10 +237,11 @@ static NSString *CellIdentifier = @"cellIdentifier";
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
-{ CGRect msgframes=self.msgInPutView.frame;
+{
+    CGRect msgframes=self.msgInPutView.frame;
     //CGRect btnframes=self.sendChatBtn.frame;
     CGRect tableviewframe=self.sphChatTable.frame;
-
+    NSLog(@"prueba");
     msgframes.origin.y=self.view.frame.size.height-50;
     tableviewframe.size.height+=200;
     self.sphChatTable.frame=tableviewframe;
@@ -255,7 +256,7 @@ static NSString *CellIdentifier = @"cellIdentifier";
 
 -(void)scrollTableview
 {
-
+    NSLog(@"entroo");
     NSInteger item = [self collectionView:self.sphChatTable numberOfItemsInSection:0] - 1;
     NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
     [self.sphChatTable
@@ -267,21 +268,21 @@ static NSString *CellIdentifier = @"cellIdentifier";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    MessageParse *message = [self.messages objectAtIndex:indexPath.row];
+    //    SPH_PARAM_List *feed_data=[[SPH_PARAM_List alloc]init];
+    //    feed_data=[sphBubbledata objectAtIndex:indexPath.row];
 
-    SPH_PARAM_List *feed_data=[[SPH_PARAM_List alloc]init];
-    feed_data=[sphBubbledata objectAtIndex:indexPath.row];
+    //    if ([feed_data.chat_media_type isEqualToString:kSTextByme]||[feed_data.chat_media_type isEqualToString:kSTextByOther])
+    //    {
 
-    if ([feed_data.chat_media_type isEqualToString:kSTextByme]||[feed_data.chat_media_type isEqualToString:kSTextByOther])
-    {
+    NSStringDrawingContext *ctx = [NSStringDrawingContext new];
+    NSAttributedString *aString = [[NSAttributedString alloc] initWithString:message.text];
+    UITextView *calculationView = [[UITextView alloc] init];
+    [calculationView setAttributedText:aString];
+    CGRect textRect = [calculationView.text boundingRectWithSize: CGSizeMake(TWO_THIRDS_OF_PORTRAIT_WIDTH, 10000000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:calculationView.font} context:ctx];
 
-        NSStringDrawingContext *ctx = [NSStringDrawingContext new];
-        NSAttributedString *aString = [[NSAttributedString alloc] initWithString:feed_data.chat_message];
-        UITextView *calculationView = [[UITextView alloc] init];
-        [calculationView setAttributedText:aString];
-        CGRect textRect = [calculationView.text boundingRectWithSize: CGSizeMake(TWO_THIRDS_OF_PORTRAIT_WIDTH, 10000000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:calculationView.font} context:ctx];
-
-        return CGSizeMake(306,textRect.size.height+40);
-    }
+    return CGSizeMake(306,textRect.size.height+40);
+    //    }
 
 
     return CGSizeMake(306, 90);
@@ -290,7 +291,7 @@ static NSString *CellIdentifier = @"cellIdentifier";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return sphBubbledata.count;
+    return self.messages.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -300,21 +301,21 @@ static NSString *CellIdentifier = @"cellIdentifier";
     cell.layer.shouldRasterize = YES;
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
 
-    SPH_PARAM_List *feed_data=[[SPH_PARAM_List alloc]init];
-    feed_data=[sphBubbledata objectAtIndex:indexPath.row];
+    //    SPH_PARAM_List *feed_data=[[SPH_PARAM_List alloc]init];
+    //    feed_data=[sphBubbledata objectAtIndex:indexPath.row];
 
     //  NSLog(@"Chat Message =%@",feed_data.chat_message);
-
+    MessageParse *message = [self.messages objectAtIndex:indexPath.row];
     dispatch_async(dispatch_get_main_queue(), ^
                    {
                        for (UIView *v in [cell.contentView subviews])
                            [v removeFromSuperview];
                        if ([self.sphChatTable.indexPathsForVisibleItems containsObject:indexPath])
                        {
-                           if ([feed_data.chat_media_type isEqualToString:kSTextByme])
+                           if ([message.fromUserParse.objectId isEqualToString:[PFUser currentUser].objectId])
                            {
                                SPHTextBubbleView *textMessageBubble =
-                               [[SPHTextBubbleView alloc] initWithText:feed_data.chat_message
+                               [[SPHTextBubbleView alloc] initWithText:message.text
                                                              withColor:GREEN_TEXT_BUBBLE_COLOR
                                                     withHighlightColor:[UIColor whiteColor]
                                                      withTailDirection:MessageBubbleViewButtonTailDirectionRight
@@ -326,14 +327,14 @@ static NSString *CellIdentifier = @"cellIdentifier";
 
 
                                UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-30, 55, 20)];
-                               timeLabel.text=feed_data.chat_date_time;
+                               //timeLabel.text=feed_data.chat_date_time;
+                               timeLabel.text = @"Cambiar fecha";
                                timeLabel.font=[UIFont systemFontOfSize:9];
                                timeLabel.textColor=[UIColor blackColor];
                                [cell.contentView addSubview:timeLabel];
 
 
-
-                               if ([feed_data.chat_send_status isEqualToString:kSending])
+                               if ([message.status isEqualToString:kSending])
                                {
                                    UIActivityIndicatorView *myIndicator=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
                                    [myIndicator setFrame:CGRectMake(0,cell.frame.size.height-50,20, 20)];
@@ -343,7 +344,7 @@ static NSString *CellIdentifier = @"cellIdentifier";
                                else
                                {
                                    UIImageView *imgView=[[UIImageView alloc]initWithFrame:CGRectMake(0,cell.frame.size.height-50,16, 16)];
-                                   if ([feed_data.chat_send_status isEqualToString:kSent])
+                                   if ([message.status isEqualToString:kSent])
                                        [imgView setImage:[UIImage imageNamed:@"sentSucess"]];
                                    else
                                        [imgView setImage:[UIImage imageNamed:@"sentFailed"]];//sentFailed
@@ -370,129 +371,18 @@ static NSString *CellIdentifier = @"cellIdentifier";
                                        }
                                    }];
                                }];
+
+
                            }
-                           else
-                               if ([feed_data.chat_media_type isEqualToString:kSTextByOther])
-                               {
-                                   SPHTextBubbleView *textMessageBubble =
-                                   [[SPHTextBubbleView alloc] initWithText:feed_data.chat_message
-                                                                 withColor:LIGHT_GRAY_TEXT_BUBBLE_COLOR
-                                                        withHighlightColor:[UIColor blackColor]
-                                                         withTailDirection:MessageBubbleViewButtonTailDirectionLeft
-                                                                  maxWidth:MAX_BUBBLE_WIDTH];
-
-                                   [textMessageBubble sizeToFit];
-                                   textMessageBubble.frame = CGRectMake(40,0, textMessageBubble.frame.size.width, textMessageBubble.frame.size.height);
-                                   [cell.contentView addSubview:textMessageBubble];
-
-                                   UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(260, cell.frame.size.height-30, 55, 20)];
-                                   timeLabel.text=feed_data.chat_date_time;
-                                   timeLabel.font=[UIFont systemFontOfSize:9];
-                                   timeLabel.textColor=[UIColor blackColor];
-                                   [cell.contentView addSubview:timeLabel];
+                       }});
 
 
-                                   UIImageView *AvatarView=[[UIImageView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-50, 40, 40)];
-                                   AvatarView.layer.cornerRadius = 20.0;
-                                   AvatarView.layer.masksToBounds = YES;
-                                   AvatarView.layer.borderColor = [UIColor colorWithRed:0.224 green:0.255 blue:0.396 alpha:1.0].CGColor;
-                                   AvatarView.layer.borderWidth = 2.0;
-                                   UserParse *user = self.toUserParse;
-                                   [user fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-                                       [user.photo getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                                           [AvatarView setImage:[UIImage imageWithData:data]];
-                                           [cell.contentView addSubview:AvatarView];
-                                       }];
-                                   }];
-
-
-
-
-                               }
-                               else
-                                   if ([feed_data.chat_media_type isEqualToString:kSImagebyme])
-                                   {
-                                       SPHImageBubbleView *flowerImageBubbleView =
-                                       [[SPHImageBubbleView alloc] initWithImage:[UIImage imageNamed:@"picture"] withTailDirection:MessageBubbleViewTailDirectionRight atSize:IMAGE_SIZE];
-
-                                       [flowerImageBubbleView sizeToFit];
-                                       flowerImageBubbleView.frame = CGRectMake(170,0, 90, 90);
-
-                                       [cell.contentView addSubview:flowerImageBubbleView];
-
-
-                                       UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-30, 55, 20)];
-                                       timeLabel.text=feed_data.chat_date_time;
-                                       timeLabel.font=[UIFont systemFontOfSize:9];
-                                       timeLabel.textColor=[UIColor blackColor];
-                                       [cell.contentView addSubview:timeLabel];
-
-
-
-                                       if ([feed_data.chat_send_status isEqualToString:kSending])
-                                       {
-                                           UIActivityIndicatorView *myIndicator=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-                                           [myIndicator setFrame:CGRectMake(0,cell.frame.size.height-50,20, 20)];
-                                           [myIndicator startAnimating];
-                                           [cell.contentView addSubview:myIndicator];
-                                       }
-                                       else
-                                       {
-                                           UIImageView *imgView=[[UIImageView alloc]initWithFrame:CGRectMake(0,cell.frame.size.height-50,16, 16)];
-                                           if ([feed_data.chat_send_status isEqualToString:kSent])
-                                               [imgView setImage:[UIImage imageNamed:@"sentSucess"]];
-                                           else
-                                               [imgView setImage:[UIImage imageNamed:@"sentFailed"]];//sentFailed
-
-                                           [cell.contentView addSubview:imgView];
-                                       }
-
-
-
-                                       UIImageView *AvatarView=[[UIImageView alloc]initWithFrame:CGRectMake(265, cell.frame.size.height-50, 40, 40)];
-                                       AvatarView.layer.cornerRadius = 20.0;
-                                       AvatarView.layer.masksToBounds = YES;
-                                       AvatarView.layer.borderColor = [UIColor colorWithRed:0.224 green:0.255 blue:0.396 alpha:1.0].CGColor;
-                                       AvatarView.layer.borderWidth = 2.0;
-                                       [AvatarView setImage:[UIImage imageNamed:@"person"]];
-                                       [cell.contentView addSubview:AvatarView];
-                                   }
-                                   else
-                                   {
-                                       SPHImageBubbleView *flowerImageBubbleView =
-                                       [[SPHImageBubbleView alloc] initWithImage:[UIImage imageNamed:@"app22"] withTailDirection:MessageBubbleViewTailDirectionLeft atSize:IMAGE_SIZE];
-
-                                       [flowerImageBubbleView sizeToFit];
-                                       flowerImageBubbleView.frame = CGRectMake(40,0, 90, 90);
-
-                                       [cell.contentView addSubview:flowerImageBubbleView];
-
-                                       UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(260, cell.frame.size.height-30, 55, 20)];
-                                       timeLabel.text=feed_data.chat_date_time;
-                                       timeLabel.font=[UIFont systemFontOfSize:9];
-                                       timeLabel.textColor=[UIColor blackColor];
-                                       [cell.contentView addSubview:timeLabel];
-
-
-                                       UIImageView *AvatarView=[[UIImageView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-50, 40, 40)];
-                                       AvatarView.layer.cornerRadius = 20.0;
-                                       AvatarView.layer.masksToBounds = YES;
-                                       AvatarView.layer.borderColor = [UIColor colorWithRed:0.224 green:0.255 blue:0.396 alpha:1.0].CGColor;
-                                       AvatarView.layer.borderWidth = 2.0;
-                                       [AvatarView setImage:[UIImage imageNamed:@"BlankUser.jpg"]];
-                                       [cell.contentView addSubview:AvatarView];
-
-                                   }
-
-
-
-                       }
-                   });
 
 
 
     return cell;
 }
+
 
 
 
@@ -548,30 +438,30 @@ static NSString *CellIdentifier = @"cellIdentifier";
         message.text = self.messageField.text;
         [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             [self performSelector:@selector(messageSent:) withObject:rowNum afterDelay:1];
-            
-            
+
+
         }];
         [self.messages addObject:message];
-        
+
         [self.sphChatTable reloadData];
         [self scrollTableview];
-        
+
         PFQuery *query = [PFInstallation query];
         [query whereKey:@"user" equalTo:self.toUserParse];
-        
-        
+
+
         [PFPush sendPushMessageToQueryInBackground:query
                                        withMessage:self.messageField.text];
-        
-        
-        
-        
+
+
+
+
         //        if (isfromMe)
         //        {
         //            NSString *rowNum=[NSString stringWithFormat:@"%lu",(unsigned long)sphBubbledata.count];
         //            [self adddMediaBubbledata:kSTextByme mediaPath:self.messageField.text mtime:[formatter stringFromDate:date] thumb:@"" downloadstatus:@"" sendingStatus:kSending msg_ID:[self genRandStringLength:7]];
         //            [self performSelector:@selector(messageSent:) withObject:rowNum afterDelay:1];
-        //           
+        //
         //            isfromMe=NO;
         //        }
         //        else
